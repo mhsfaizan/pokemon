@@ -1,0 +1,22 @@
+<div mat-dialog-content>
+  <div class="pockemon"><img [src]="data.sprites.front_shiny"></div>
+  <span>{{data.name}}</span>
+  <br />
+  <div class="more-info">
+    <p><b>Id</b> <span>&nbsp;&nbsp;{{data.id}}</span></p>
+    <p><span><b>Height</b></span> &nbsp;<span>{{data.height}}</span>&nbsp;&nbsp;&nbsp;<span><b>Weight</b></span>
+      &nbsp;<span>{{data.weight}}</span></p>
+
+    <p><span><b>Types</b></span></p>
+    <ul class="type">
+      <li *ngFor="let type of data.types">{{type.type.name}}</li>
+    </ul>
+    <p><span><b>Abilities</b></span></p>
+    <ul class="type">
+      <li *ngFor="let ability of data.abilities">{{ability.ability.name}}</li>
+    </ul>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="" cdkFocusInitial>Ok</button>
+</div>

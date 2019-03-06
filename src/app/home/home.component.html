@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">Pockemon Api</mat-toolbar>
+<mat-progress-bar mode="indeterminate" *ngIf="!isLoad"></mat-progress-bar>
+<section id="pockemons" *ngIf="isLoad">
+  <br />
+  <div class="pockemons" *ngIf="pockemons">
+    <div class="pockemon" *ngFor="let pockemon of pockemons.results" (click)="openD(pockemon.data)">
+      <mat-card>
+        <div class="center-image">
+          <img *ngIf="pockemon.data" [src]="pockemon.data.sprites.front_shiny">
+        </div>
+        <span>{{pockemon.name}}</span>
+      </mat-card>
+    </div>
+    <button mat-raised-button   *ngIf="pockemons.previous" (click)="changeData(pockemons.previous)">Previous</button>&nbsp;&nbsp;&nbsp;
+    <button mat-raised-button color="primary"  *ngIf="pockemons.next" (click)="changeData(pockemons.next)">Next</button>&nbsp;&nbsp;&nbsp;
+  </div>
+  <div *ngIf="!pockemons">
+    <mat-card>No Data Found</mat-card>
+  </div>
+</section>
+<br/>
+<mat-toolbar color="primary">
+  <span>All Rights Reserved</span>
+</mat-toolbar>

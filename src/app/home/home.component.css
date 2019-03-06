@@ -1,0 +1,23 @@
+.pockemons{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.center-image{
+    text-align: center;
+}
+.center-image + span{
+    text-align: center;
+    display: block;
+}
+.pockemons > .pockemon{
+    flex-basis: calc(20% - 1rem);
+    margin-right: 1rem;
+    max-height: 200px;
+    margin-bottom: 3rem;
+    cursor: pointer;
+}
+.pockemons > .pockemon > mat-card{
+    height: 100%;
+}
