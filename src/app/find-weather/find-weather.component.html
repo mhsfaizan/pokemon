@@ -12,7 +12,7 @@
         <mat-form-field appearance="outline">
           <mat-label>Country</mat-label>
           <mat-select [(ngModel)]="con">
-            <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+            <mat-option *ngFor="let country of countries|keyvalue" [value]="country.key">{{country.value}}</mat-option>
           </mat-select>
         </mat-form-field>
         &nbsp;&nbsp;
@@ -34,7 +34,7 @@
       <div *ngIf="isLoad==2">
         <h2>Weather</h2>
         <h1>
-          {{weatherData.main.temp}}&#8451;&nbsp;&nbsp;,<span>{{weatherData.weather[0].main}}</span><span>&nbsp;,{{weatherData.name}}</span>
+          {{weatherData.main.temp}}&#8451;&nbsp;&nbsp;,<span>{{weatherData.weather[0].main}}</span><span>&nbsp;&nbsp;,{{weatherData.name}}</span>
         </h1>
       </div>
       <div *ngIf="isLoad==3">

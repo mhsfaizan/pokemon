@@ -16,11 +16,19 @@ export class FindWeatherComponent implements OnInit {
   countries:any = [];
   ngOnInit() {
     this._http.get("assets/country.json").subscribe((codes)=>{
-      let arr = []
-      for(let code in codes ){
-        arr.push(code);
-      }
-      this.countries = arr.sort();
+      // for(let code in codes ){
+      //   arr.push({
+      //     toShow:codes[code],
+      //     toUse:code
+      //   });
+      // }
+      // this.countries = arr.sort();
+      Object.keys(codes).sort().forEach(function(key) {
+        var value = codes[key];
+        delete codes[key];
+        codes[key] = value;
+    });
+      this.countries = codes;
       console.log(this.countries);
     })
   }
@@ -32,6 +40,7 @@ export class FindWeatherComponent implements OnInit {
         this.isLoad = 2;
         this.weatherData = res;
       },(err)=>{
+        this.weatherData = {};
         this.isLoad = 3;
       })
     }else{
