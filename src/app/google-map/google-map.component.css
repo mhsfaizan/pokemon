@@ -1,0 +1,29 @@
+.container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: calc(100vh - 128px);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+}
+.container >h1{
+    font-weight: 200;
+    margin:0;
+    padding-top: 2rem;
+    font-size: 5vw;
+}
+.container >h2{
+    margin: 0;
+    font-weight: 200;
+    font-size: 3vw;
+}
+@media(max-width:768px){
+    .container >h1{
+        font-size: 7vw;
+    }
+    .container >h2{
+        font-size: 6vw;
+    }
+}

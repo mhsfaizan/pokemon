@@ -1,0 +1,14 @@
+<mat-progress-bar mode="indeterminate" style="margin-bottom: 1rem;" *ngIf="!isLoad"></mat-progress-bar>
+<section *ngIf="isLoad">
+  <div class="container" style="background-image: url('assets/weather.jpg')" *ngIf="weatherData">
+    <h1>Current Weather</h1>
+    <h2>{{weatherData.main.temp}} &#8451;<span>&nbsp;,{{weatherData.weather[0].main}}</span><span>&nbsp;,{{weatherData.name}}</span></h2>
+    <div>
+        <br/><br/>
+      <button mat-raised-button color="primary" routerLink="/other-location">Find Weather to other Location</button>
+    </div>
+  </div>
+  <div *ngIf="isError">
+    <h2>Your Browser Not Supported Geo Api</h2>
+  </div>
+</section>

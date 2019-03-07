@@ -1,0 +1,19 @@
+.container{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+}
+.container > div{
+    flex-basis:49%
+}
+.container > div>h1{
+    text-align: center;
+    color:#555;
+    font-weight: 200;
+}
+.container>div:first-child{
+    margin-right:1rem;
+}
+.container >form-field{
+    width: 100%;
+}

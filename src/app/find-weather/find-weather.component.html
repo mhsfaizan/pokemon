@@ -1,0 +1,46 @@
+<br />
+<section class="container">
+  <div class="search-area">
+    <h1>Search Here</h1>
+    <mat-card>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Zipcode</mat-label>
+          <input matInput placeholder="zipcode" [(ngModel)]="zipcode">
+        </mat-form-field>
+        &nbsp;&nbsp;
+        <mat-form-field appearance="outline">
+          <mat-label>Country</mat-label>
+          <mat-select [(ngModel)]="con">
+            <mat-option *ngFor="let country of countries" [value]="country">{{country}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        &nbsp;&nbsp;
+        <button mat-raised-button color="primary" (click)="getZip(zipcode,con)">Search</button>
+      </div>
+      <div>
+        <!-- <mat-form-field appearance="outline">
+          <mat-label>Zipcode</mat-label>
+          <input matInput placeholder="zipcode" [(ngModel)]="zipcode">
+        </mat-form-field>
+        &nbsp;&nbsp;
+        <button mat-raised-button color="primary">Search</button> -->
+      </div>
+    </mat-card>
+  </div>
+  <div class="result-area" *ngIf="weatherData">
+    <mat-card>
+      <mat-spinner *ngIf="isLoad==1"></mat-spinner>
+      <div *ngIf="isLoad==2">
+        <h2>Weather</h2>
+        <h1>
+          {{weatherData.main.temp}}&#8451;&nbsp;&nbsp;,<span>{{weatherData.weather[0].main}}</span><span>&nbsp;,{{weatherData.name}}</span>
+        </h1>
+      </div>
+      <div *ngIf="isLoad==3">
+        <h1>Please Enter The right data!</h1>
+      </div>
+    </mat-card>
+  </div>
+</section>
+<br />

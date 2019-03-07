@@ -13,14 +13,22 @@ import {MatButtonModule} from '@angular/material/button';
 import { PokemonComponent } from './pokemon/pokemon.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
-
+import { GoogleMapComponent } from './google-map/google-map.component';
+import { FindWeatherComponent } from './find-weather/find-weather.component';
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PokemonComponent
+    PokemonComponent,
+    GoogleMapComponent,
+    FindWeatherComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,12 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatToolbarModule,
     MatButtonModule,
     MatProgressBarModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatSelectModule
   ],
   providers: [],
   entryComponents:[PokemonComponent],
