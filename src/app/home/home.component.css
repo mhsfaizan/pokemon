@@ -1,23 +1,33 @@
-.pockemons{
+.pockemons {
     display: flex;
     flex-wrap: wrap;
     padding-left: 1rem;
     padding-right: 1rem;
 }
-.center-image{
+
+.center-image {
     text-align: center;
 }
-.center-image + span{
+
+.center-image+span {
     text-align: center;
     display: block;
 }
-.pockemons > .pockemon{
+
+.pockemons>.pockemon {
     flex-basis: calc(20% - 1rem);
     margin-right: 1rem;
     max-height: 200px;
     margin-bottom: 3rem;
     cursor: pointer;
 }
-.pockemons > .pockemon > mat-card{
+
+.pockemons>.pockemon>mat-card {
     height: 100%;
+}
+
+@media(max-width:768px) {
+    .pockemons>.pockemon {
+        flex-basis: calc(50% - 1rem);
+    }
 }

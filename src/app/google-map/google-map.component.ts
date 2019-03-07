@@ -23,10 +23,13 @@ export class GoogleMapComponent implements OnInit {
         // let lon = Math.floor(pos.coords.longitude);
         let lat = pos.coords.latitude;
         let lon = pos.coords.longitude;
-        this._http.get("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=aa478abef8023ef510e3fe7dabb7f45c").subscribe((res:any)=>{
+        this._http.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=aa478abef8023ef510e3fe7dabb7f45c").subscribe((res: any) => {
           console.log(res);
           res.main.temp = Math.floor(this.converToCel(res.main.temp));
           this.weatherData = res;
+          this.isLoad = true;
+        }, (err) => {
+          this.isError = true;
           this.isLoad = true;
         })
       }, (err) => {
@@ -38,7 +41,7 @@ export class GoogleMapComponent implements OnInit {
       this.isError = true;
     }
   }
-  converToCel(kelvin:number){
-    return (kelvin-273);
+  converToCel(kelvin: number) {
+    return (kelvin - 273);
   }
 }

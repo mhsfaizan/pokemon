@@ -10,13 +10,17 @@ export class FindWeatherComponent implements OnInit {
 
   constructor(private _http: HttpClient) { }
   weatherData: any;
+  zipcode:number;
+  con:string;
   isLoad: number;
   countries:any = [];
   ngOnInit() {
-    this._http.get("/assets/country.json").subscribe((codes)=>{
+    this._http.get("assets/country.json").subscribe((codes)=>{
+      let arr = []
       for(let code in codes ){
-        this.countries.push(code);
+        arr.push(code);
       }
+      this.countries = arr.sort();
       console.log(this.countries);
     })
   }

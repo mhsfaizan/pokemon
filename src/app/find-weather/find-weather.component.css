@@ -2,6 +2,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     display: flex;
+    flex-wrap: wrap;
 }
 .container > div{
     flex-basis:49%
@@ -16,4 +17,13 @@
 }
 .container >form-field{
     width: 100%;
+}
+@media(max-width:768px){
+    .container > div{
+        flex-basis: 100%;
+    }
+    .container>div:first-child{
+        margin-right:0rem;
+        margin-bottom: 1rem;
+    }
 }
